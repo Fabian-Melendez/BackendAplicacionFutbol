@@ -38,13 +38,10 @@ dependencies {
 }
 
 kotlin {
-    jvmToolchain(21)
-    compilerOptions {
-        freeCompilerArgs.addAll(
-            "-Xjsr305=strict",
-            "-Xannotation-default-target=param-property"
-        )
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        }
     }
 }
 
