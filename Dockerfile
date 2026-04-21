@@ -1,12 +1,12 @@
 # Etapa 1: build
-FROM gradle:8.5-jdk17 AS build
+FROM gradle:8.14-jdk17 AS build
 WORKDIR /app
 COPY . .
 
 RUN chmod +x gradlew
 RUN ./gradlew build --no-daemon
 
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 COPY --from=build /app/build/libs/*.jar app.jar
