@@ -10,11 +10,11 @@ group = "org.example"
 version = "0.0.1-SNAPSHOT"
 description = "backend"
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(21))
+        }
     }
-}
 
 repositories {
     mavenCentral()
